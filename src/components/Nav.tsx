@@ -41,7 +41,7 @@ export default function Nav() {
 
         <div className={styles.actions}>
           <a href="#contact" className={`btn btn-primary ${styles.small}`} onClick={close}>
-            Say hello
+            Get in touch
           </a>
           <button
             className={styles.burger}

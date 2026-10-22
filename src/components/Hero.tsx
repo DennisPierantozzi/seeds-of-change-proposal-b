@@ -56,7 +56,7 @@ export default function Hero() {
           </p>
           <div className={styles.ctas} data-fade>
             <a href="#contact" className="btn btn-primary">
-              Say hello <Arrow />
+              Work with us <Arrow />
             </a>
             <a href="#journey" className="btn btn-ghost">
               See how it works

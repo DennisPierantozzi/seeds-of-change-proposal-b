@@ -21,7 +21,7 @@ export default function EmailCard() {
     <div id="contact" className={styles.card}>
       <div>
         <h3 className={styles.heading}>Email us</h3>
-        <p className={styles.sub}>Write to a real person on the team.</p>
+        <p className={styles.sub}>Write to the team.</p>
       </div>
       <div className={styles.address}>
         <a href={`mailto:${site.email}`} className={styles.email}>
