@@ -1,0 +1,36 @@
+.intro {
+  padding: clamp(96px, 14vw, 180px) 0;
+}
+
+.context {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px 48px;
+  max-width: 900px;
+  margin-bottom: clamp(56px, 8vw, 96px);
+}
+
+.context p {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.statement {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4.2vw, 3.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--navy-deep);
+  max-width: 1050px;
+}
+
+.word {
+  transition: none;
+}
+
+@media (max-width: 720px) {
+  .context {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,126 @@
+.community {
+  padding: clamp(96px, 12vw, 160px) 0;
+  background: var(--navy-deep);
+  color: #fff;
+}
+
+.community :global(.h2) {
+  color: #fff;
+}
+
+.community :global(.lede) {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.community :global(.note) {
+  color: #9fd0e4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 8' preserveAspectRatio='none'%3E%3Cpath d='M2 5 C 20 1, 34 7, 52 4 S 86 2, 118 5' fill='none' stroke='%239fd0e4' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.net {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.link {
+  stroke: var(--sky);
+  stroke-opacity: 0.5;
+  stroke-width: 2;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 0;
+}
+
+.node circle {
+  fill: var(--sky);
+}
+
+.node .pulse {
+  fill: var(--sky);
+  opacity: 0.18;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse 2.8s ease-in-out infinite;
+}
+
+.node:nth-of-type(2) .pulse {
+  animation-delay: 0.9s;
+}
+
+.node:nth-of-type(3) .pulse {
+  animation-delay: 1.8s;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.35);
+    opacity: 0.05;
+  }
+}
+
+.hub circle {
+  fill: var(--leaf);
+}
+
+.role {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  fill: #fff;
+}
+
+.place {
+  font-size: 13px;
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: clamp(56px, 8vw, 96px);
+}
+
+.pillar {
+  padding: 28px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px dashed rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pillar h3 {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.pillar p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 860px) {
+  .grid,
+  .pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .net {
+    max-width: 440px;
+    justify-self: center;
+  }
+}

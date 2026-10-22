@@ -1,0 +1,102 @@
+.involved {
+  padding: clamp(96px, 12vw, 160px) 0 clamp(64px, 8vw, 120px);
+}
+
+.title {
+  font-size: clamp(2.2rem, 5.2vw, 4.4rem);
+  max-width: 18ch;
+  margin: 18px 0 clamp(40px, 6vw, 72px);
+}
+
+.title span {
+  display: inline-block;
+  white-space: pre;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 30px 26px;
+  border-radius: var(--radius);
+  border: var(--edge);
+  background: var(--surface);
+  box-shadow: var(--pop);
+  scroll-margin-top: calc(var(--nav-h) + 24px);
+}
+
+.card:nth-child(1) {
+  transform: rotate(-0.6deg);
+}
+
+.card:nth-child(3) {
+  transform: rotate(0.6deg);
+}
+
+.card h3 {
+  font-size: 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.card > p {
+  color: var(--muted);
+  flex: 1;
+}
+
+.partner {
+  background: var(--navy);
+  color: #fff;
+}
+
+.partner h3 {
+  color: #fff;
+}
+
+.partner > p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.donate {
+  background: var(--leaf-soft);
+}
+
+.badge {
+  font-family: var(--font-hand), cursive;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 4px 10px 6px;
+  border-radius: 6px;
+  background: #f3dc8a;
+  color: var(--ink);
+  transform: rotate(-3deg);
+}
+
+.pending {
+  font-size: 15px;
+  color: var(--navy-deep);
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px dashed rgba(16, 27, 46, 0.35);
+}
+
+@media (max-width: 960px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card:nth-child(n) {
+    transform: none;
+  }
+}

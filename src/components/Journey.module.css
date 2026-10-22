@@ -1,0 +1,151 @@
+.journey {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--nav-h) + 16px) 0 32px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: clamp(24px, 4vw, 64px);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.copy :global(.h2) {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.stages {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.stages li {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  opacity: 0.4;
+  transition: opacity 0.4s ease;
+}
+
+.stages li.active {
+  opacity: 1;
+}
+
+.num {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  color: var(--sky);
+  padding-top: 2px;
+}
+
+.stages h3 {
+  font-size: 1.35rem;
+}
+
+.line {
+  font-weight: 600;
+  color: var(--navy);
+  margin-top: 2px;
+}
+
+.body {
+  color: var(--muted);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.4s ease, margin 0.4s ease;
+}
+
+.active .body {
+  max-height: 140px;
+  opacity: 1;
+  margin-top: 6px;
+}
+
+.rail {
+  display: flex;
+  gap: 6px;
+}
+
+.rail span {
+  flex: 1;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--line);
+  transition: background-color 0.4s ease;
+}
+
+.rail span.on {
+  background: var(--leaf);
+}
+
+.stage svg {
+  width: 100%;
+  height: auto;
+  max-height: 82svh;
+  display: block;
+  overflow: visible;
+}
+
+.seedLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  fill: var(--navy);
+}
+
+.static .rail {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .journey {
+    align-items: flex-start;
+    padding-top: calc(var(--nav-h) + 8px);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .stage {
+    order: -1;
+  }
+
+  .stage svg {
+    max-height: 40svh;
+  }
+
+  .copy {
+    gap: 12px;
+  }
+
+  .copy :global(.note),
+  .copy :global(.h2) {
+    display: none;
+  }
+
+  .journey:not(.static) .stages li:not(.active) {
+    display: none;
+  }
+
+  .stages li {
+    border-top: 0;
+  }
+}
